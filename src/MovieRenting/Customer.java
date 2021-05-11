@@ -1,3 +1,5 @@
+package MovieRenting;
+
 import java.lang.*;
 import java.util.*;
 
@@ -17,7 +19,7 @@ class Customer {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration enum_rentals = rentals.elements();
-        String result = "Rental Record for " + this.getName() + "\n";
+        String result = "MovieRenting.Rental Record for " + this.getName() + "\n";
         result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
         while (enum_rentals.hasMoreElements()) {
@@ -40,7 +42,7 @@ class Customer {
         return result;
     }
 
-    private double amountFor(Rental each) {
+    public double amountFor(Rental each) {
         double thisAmount = 0;
         switch (each.getMovie().getPriceCode()) {
             case Movie.REGULAR:
