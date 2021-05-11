@@ -7,7 +7,7 @@ class Customer {
     private String name;
     private Vector rentals = new Vector();
 
-    private double amountFor(Rental aRental) {
+    double amountFor(Rental aRental) {
         return aRental.getCharge();
     }
 
@@ -39,8 +39,8 @@ class Customer {
             if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1)
                 frequentRenterPoints++;
             //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" + "\t" + each.getDaysRented() + "\t" + String.valueOf(thisAmount) + "\n";
-            totalAmount += thisAmount;
+            result += "\t" + each.getMovie().getTitle() + "\t" + "\t" + each.getDaysRented() + "\t" + each.getCharge() + "\n";
+            totalAmount += each.getCharge();
         }
         //add footer lines
         result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
